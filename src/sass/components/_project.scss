@@ -1,0 +1,49 @@
+.project {
+  border-radius: 5%;
+  background-color: $red;
+
+  &--header {
+    padding: 3rem;
+    border-radius: 5%;
+    background: linear-gradient(
+        rgba(darken($dark-yellow, 40%), 0.9),
+        rgba(darken($dark-yellow, 40%), 0.9)
+      ),
+      url('../../assets/recipify.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+    &--title {
+      color: $light-blue;
+      text-align: center;
+    }
+
+    &--buttons {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 2rem;
+      &--button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        ion-icon {
+          color: $light-blue;
+          transition: color 0.4s;
+        }
+
+        &:hover ion-icon {
+          color: lighten($light-blue, 50%);
+        }
+      }
+    }
+  }
+
+  &--description {
+    padding: 2rem;
+    line-height: 2;
+    color: $light-blue;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+}

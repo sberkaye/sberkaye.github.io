@@ -1,0 +1,43 @@
+ion-icon {
+  color: lighten($red, 9%);
+  transition: color 0.4s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
+
+  a {
+    margin: 1rem;
+    &:hover ion-icon {
+      color: $red;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+
+  &--name {
+    font-size: 4rem;
+    letter-spacing: 1px;
+    color: $dark-blue;
+  }
+
+  &--title {
+    font-size: 2rem;
+    color: $red;
+  }
+
+  &--description {
+    text-align: center;
+    margin-top: 2rem;
+    color: #444;
+  }
+}

@@ -1,0 +1,173 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+.project {
+  border-radius: 5%;
+  background-color: #d64933;
+}
+.project--header {
+  padding: 3rem;
+  border-radius: 5%;
+  background: linear-gradient(rgba(126, 96, 13, 0.9), rgba(126, 96, 13, 0.9)), url("../../assets/recipify.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.project--header--title {
+  color: #e1e2ef;
+  text-align: center;
+}
+.project--header--buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+.project--header--buttons--button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.project--header--buttons--button ion-icon {
+  color: #e1e2ef;
+  transition: color 0.4s;
+}
+.project--header--buttons--button:hover ion-icon {
+  color: white;
+}
+.project--description {
+  padding: 2rem;
+  line-height: 2;
+  color: #e1e2ef;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+  }
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc( (100% - 2 * 6rem) / 3 * 2 + 6rem );
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc( (100% - 3 * 6rem) / 4 * 2 + 6rem );
+}
+.row .col-3-of-4 {
+  width: calc( (100% - 3 * 6rem) / 4 * 3 + 2 * 6rem );
+}
+
+ion-icon {
+  color: #de6b59;
+  transition: color 0.4s;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
+}
+.buttons a {
+  margin: 1rem;
+}
+.buttons a:hover ion-icon {
+  color: #d64933;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+.header--name {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  color: #190e4f;
+}
+.header--title {
+  font-size: 2rem;
+  color: #d64933;
+}
+.header--description {
+  text-align: center;
+  margin-top: 2rem;
+  color: #444;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  background-color: #e1e2ef;
+}
+
+/*# sourceMappingURL=style.css.map */
