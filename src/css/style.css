@@ -1,9 +1,24 @@
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.moveInUp {
+  animation-name: moveInUp;
+}
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  animation-fill-mode: forwards;
 }
 
 html {
@@ -29,6 +44,7 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.1rem;
   text-align: center;
+  cursor: default;
 }
 
 h1 {
@@ -39,51 +55,77 @@ h2 {
   font-size: 2rem;
 }
 
+p {
+  text-align: center;
+  cursor: default;
+  margin-top: 2rem;
+  color: #444;
+}
+
 .project {
   border-radius: 1rem;
   background-color: #d64933;
-  height: 82vh;
+  height: 80vh;
+  max-width: 22vw;
 }
 @media (max-width: 56.25em) {
   .project {
     margin: 2rem;
     height: 100%;
+    max-width: 100%;
   }
 }
 .project--header {
   padding: 3rem;
-  height: 40%;
+  height: 35%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
+  transition: all 0.6s;
+  overflow: hidden;
+}
+.project--header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  transition: inherit;
+}
+.project--header:hover::before {
+  transform: scale(1.2);
 }
 .project--header-recipify {
-  background: linear-gradient(rgba(126, 96, 13, 0.9), rgba(126, 96, 13, 0.9)), url("../../assets/recipify.jpg");
+  background: linear-gradient(rgba(126, 96, 13, 0.8), rgba(126, 96, 13, 0.8)), url("../../assets/recipify.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
 }
 .project--header-card-game {
-  background: linear-gradient(rgba(55, 58, 103, 0.9), rgba(55, 58, 103, 0.9)), url("../../assets/card_game.jpg");
+  background: linear-gradient(rgba(55, 58, 103, 0.8), rgba(55, 58, 103, 0.8)), url("../../assets/card_game.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
 }
 .project--header-cesme-palmiye {
-  background: linear-gradient(rgba(37, 36, 70, 0.9), rgba(37, 36, 70, 0.9)), url("../../assets/cesme_palmiye.jpg");
+  background: linear-gradient(rgba(37, 36, 70, 0.8), rgba(37, 36, 70, 0.8)), url("../../assets/cesme_palmiye.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
 }
 .project--header-lotr-site {
-  background: linear-gradient(rgba(103, 78, 11, 0.9), rgba(103, 78, 11, 0.9)), url("../../assets/lotr_site.jpg");
+  background: linear-gradient(rgba(103, 78, 11, 0.8), rgba(103, 78, 11, 0.8)), url("../../assets/lotr_site.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
 }
 .project--header--title {
+  position: relative;
   color: #e1e2ef;
   text-align: center;
 }
@@ -189,64 +231,6 @@ h2 {
   color: #efcb68;
 }
 
-.row {
-  max-width: 114rem;
-  margin: 4rem auto;
-}
-@media (max-width: 56.25em) {
-  .row {
-    max-width: 50rem;
-  }
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-@media (max-width: 56.25em) {
-  .row:not(:last-child) {
-    margin-bottom: 6rem;
-  }
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row [class^=col-] {
-  float: left;
-}
-.row [class^=col-]:not(:last-child) {
-  margin-right: 4rem;
-}
-@media (max-width: 56.25em) {
-  .row [class^=col-]:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 6rem;
-  }
-}
-@media (max-width: 56.25em) {
-  .row [class^=col-] {
-    width: 100% !important;
-  }
-}
-.row .col-1-of-2 {
-  width: calc((100% - 4rem) / 2);
-}
-.row .col-1-of-3 {
-  width: calc((100% - 2 * 4rem) / 3);
-}
-.row .col-2-of-3 {
-  width: calc( (100% - 2 * 4rem) / 3 * 2 + 4rem );
-}
-.row .col-1-of-4 {
-  width: calc((100% - 3 * 4rem) / 4);
-}
-.row .col-2-of-4 {
-  width: calc( (100% - 3 * 4rem) / 4 * 2 + 4rem );
-}
-.row .col-3-of-4 {
-  width: calc( (100% - 3 * 4rem) / 4 * 3 + 2 * 4rem );
-}
-
 ion-icon {
   color: #de6b59;
   transition: color 0.4s;
@@ -301,7 +285,7 @@ ion-icon {
 }
 
 .projects {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #efcb68;
 }
 @media (max-width: 75em) {
@@ -311,6 +295,37 @@ ion-icon {
 }
 .projects--header {
   color: #d64933;
+  margin-bottom: 2rem;
+}
+.projects--container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media (max-width: 56.25em) {
+  .projects--container {
+    flex-direction: column;
+  }
+}
+
+.contact {
+  background-color: #7d7abc;
+  padding: 2rem;
+  width: 100vw;
+}
+.contact--header {
+  color: #190e4f;
+}
+.contact--text {
+  color: #ddd;
+}
+.contact--text a {
+  text-decoration: none;
+  color: #efcb68;
+}
+.contact--text ion-icon {
+  color: #190e4f;
+  margin: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

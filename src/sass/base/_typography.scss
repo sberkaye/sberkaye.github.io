@@ -9,6 +9,7 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.1rem;
   text-align: center;
+  cursor: default;
 }
 
 h1 {
@@ -17,4 +18,11 @@ h1 {
 
 h2 {
   font-size: 2rem;
+}
+
+p {
+  text-align: center;
+  cursor: default;
+  margin-top: 2rem;
+  color: #444;
 }

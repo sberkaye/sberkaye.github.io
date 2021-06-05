@@ -1,0 +1,23 @@
+.contact {
+  background-color: $light-purple;
+  padding: 2rem;
+  width: 100vw;
+
+  &--header {
+    color: $dark-blue;
+  }
+
+  &--text {
+    color: #ddd;
+
+    a {
+      text-decoration: none;
+      color: $dark-yellow;
+    }
+
+    ion-icon {
+      color: $dark-blue;
+      margin: 1rem;
+    }
+  }
+}

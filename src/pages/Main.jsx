@@ -4,11 +4,11 @@ import Header from '../components/Header';
 const Main = () => (
   <div className="main page">
     <Header />
-    <div className="nav-buttons">
+    <div className="nav-buttons animate__animated animate__fadeInUp animate__delay-1s">
       <a href="#projects" className="button nav-button">
         Projects
       </a>
-      <a href="" className="button nav-button">
+      <a href="#contact" className="button nav-button">
         Contact
       </a>
       <a href="" className="button cv-button">

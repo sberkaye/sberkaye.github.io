@@ -1,10 +1,18 @@
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const projectMatch = {
   'Recipify': 'recipify',
   'Card Game': 'card-game',
   'Cesme Palmiye Ilaclama': 'cesme-palmiye',
   'Lord of the Rings Site': 'lotr-site',
+};
+
+const animationDelays = {
+  'Recipify': 100,
+  'Card Game': 300,
+  'Cesme Palmiye Ilaclama': 500,
+  'Lord of the Rings Site': 700,
 };
 
 const Project = ({ data }) => {
@@ -15,31 +23,39 @@ const Project = ({ data }) => {
     tags.map((tag) => <div className="project--tag">{tag}</div>);
 
   return (
-    <div className="project">
-      <div className={`project--header project--header-${projectMatch[title]}`}>
-        <h1 className="project--header--title">{title}</h1>
-      </div>
-      <div className="project--description">{description}</div>
-      <div className="project--header--buttons">
-        <button
-          className="project--header--buttons--button"
-          onClick={() => {
-            window.open(demoLink, '_blank');
-          }}
+    <ScrollAnimation
+      offset={250}
+      delay={animationDelays[title]}
+      animateIn="moveInUp"
+    >
+      <div className="project">
+        <div
+          className={`project--header project--header-${projectMatch[title]}`}
         >
-          <ion-icon size="large" name="eye"></ion-icon>
-        </button>
-        <button
-          className="project--header--buttons--button"
-          onClick={() => {
-            window.open(ghLink, '_blank');
-          }}
-        >
-          <ion-icon size="large" name="logo-github"></ion-icon>
-        </button>
+          <h1 className="project--header--title">{title}</h1>
+        </div>
+        <p className="project--description">{description}</p>
+        <div className="project--header--buttons">
+          <button
+            className="project--header--buttons--button"
+            onClick={() => {
+              window.open(demoLink, '_blank');
+            }}
+          >
+            <ion-icon size="large" name="eye"></ion-icon>
+          </button>
+          <button
+            className="project--header--buttons--button"
+            onClick={() => {
+              window.open(ghLink, '_blank');
+            }}
+          >
+            <ion-icon size="large" name="logo-github"></ion-icon>
+          </button>
+        </div>
+        <div className="project--tags">{renderTags()}</div>
       </div>
-      <div className="project--tags">{renderTags()}</div>
-    </div>
+    </ScrollAnimation>
   );
 };
 

@@ -2,9 +2,22 @@
   @include respond(tab-land) {
     height: 100%;
   }
-  padding: 2rem;
+
+  padding: 1rem;
   background-color: $dark-yellow;
+
   &--header {
     color: $red;
+    margin-bottom: 2rem;
+  }
+
+  &--container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
 }

@@ -10,8 +10,10 @@ const Header = () => (
         <ion-icon className="icon" size="large" name="logo-github"></ion-icon>
       </a>
     </div>
-    <div className="header">
-      <h1 className="header--name">Berkay Ergin</h1>
+    <div className="header" style={{ backfaceVisibility: 'hidden' }}>
+      <h1 className="header--name animate__animated animate__bounceInLeft animate__slow">
+        Berkay Ergin
+      </h1>
       <h2 className="header--title">Software Developer</h2>
       <p className="header--description">
         I'm a software developer who specializes in web development.
