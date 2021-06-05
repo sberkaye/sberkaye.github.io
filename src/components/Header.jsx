@@ -12,7 +12,7 @@ const Header = () => (
     </div>
     <div className="header">
       <h1 className="header--name">Berkay Ergin</h1>
-      <h1 className="header--title">Software Developer</h1>
+      <h2 className="header--title">Software Developer</h2>
       <p className="header--description">
         I'm a software developer who specializes in web development.
         <br /> I'm passionate about learning new tools to add my programming

@@ -1,2 +1,10 @@
 .projects {
+  @include respond(tab-land) {
+    height: 100%;
+  }
+  padding: 2rem;
+  background-color: $dark-yellow;
+  &--header {
+    color: $red;
+  }
 }

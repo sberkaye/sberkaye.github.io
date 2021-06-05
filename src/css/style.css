@@ -9,6 +9,8 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  backface-visibility: hidden;
 }
 
 body {
@@ -22,14 +24,61 @@ body {
   line-height: 1.7;
 }
 
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 .project {
-  border-radius: 5%;
+  border-radius: 1rem;
   background-color: #d64933;
+  height: 82vh;
+}
+@media (max-width: 56.25em) {
+  .project {
+    margin: 2rem;
+    height: 100%;
+  }
 }
 .project--header {
   padding: 3rem;
-  border-radius: 5%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.project--header-recipify {
   background: linear-gradient(rgba(126, 96, 13, 0.9), rgba(126, 96, 13, 0.9)), url("../../assets/recipify.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.project--header-card-game {
+  background: linear-gradient(rgba(55, 58, 103, 0.9), rgba(55, 58, 103, 0.9)), url("../../assets/card_game.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.project--header-cesme-palmiye {
+  background: linear-gradient(rgba(37, 36, 70, 0.9), rgba(37, 36, 70, 0.9)), url("../../assets/cesme_palmiye.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.project--header-lotr-site {
+  background: linear-gradient(rgba(103, 78, 11, 0.9), rgba(103, 78, 11, 0.9)), url("../../assets/lotr_site.jpg");
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
@@ -41,16 +90,24 @@ body {
 .project--header--buttons {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 2rem;
+  align-items: center;
+  margin: 0 2rem 3rem 2rem;
 }
 .project--header--buttons--button {
-  background-color: transparent;
+  background-color: #d64933;
   border: none;
+  border-radius: 100%;
+  padding: 0.4rem;
   cursor: pointer;
+  transition: background-color 0.4s;
+  box-shadow: 0 2px 6px 1px #5d1d13;
 }
 .project--header--buttons--button ion-icon {
   color: #e1e2ef;
   transition: color 0.4s;
+}
+.project--header--buttons--button:hover {
+  background-color: #da5c48;
 }
 .project--header--buttons--button:hover ion-icon {
   color: white;
@@ -60,12 +117,81 @@ body {
   line-height: 2;
   color: #e1e2ef;
   font-weight: 300;
+  height: 35%;
   letter-spacing: 0.5px;
+}
+.project--tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.project--tag {
+  background-color: #efcb68;
+  color: #d64933;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  margin: 0.5rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media (max-width: 37.5em) {
+  .nav-buttons {
+    flex-direction: column;
+  }
+}
+.nav-buttons .button {
+  text-decoration: none;
+  font-weight: 700;
+  transition: box-shadow 0.2s, transform 0.2s, background-color 0.2s, color 0.2s;
+  border-radius: 1rem;
+  width: 15rem;
+  text-align: center;
+}
+@media (max-width: 37.5em) {
+  .nav-buttons .button {
+    display: block;
+    margin-top: 2rem;
+    width: 30rem;
+  }
+}
+.nav-buttons .nav-button {
+  color: #e1e2ef;
+  box-shadow: 0 2px 5px 1px #722317;
+  padding: 1.2rem;
+  background-color: #d64933;
+}
+.nav-buttons .nav-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px 3px #c73e28;
+}
+.nav-buttons .nav-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 2px 2px #9d3020;
+}
+.nav-buttons .cv-button {
+  color: #d64933;
+  padding: 1rem;
+  border: 2px solid #d64933;
+}
+.nav-buttons .cv-button #cv-icon {
+  color: #190e4f;
+  margin-right: 1rem;
+}
+.nav-buttons .cv-button:hover {
+  background-color: #d64933;
+  color: #efcb68;
+}
+.nav-buttons .cv-button:hover #cv-icon {
+  color: #efcb68;
 }
 
 .row {
   max-width: 114rem;
-  margin: 0 auto;
+  margin: 4rem auto;
 }
 @media (max-width: 56.25em) {
   .row {
@@ -89,7 +215,7 @@ body {
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
-  margin-right: 6rem;
+  margin-right: 4rem;
 }
 @media (max-width: 56.25em) {
   .row [class^=col-]:not(:last-child) {
@@ -103,22 +229,22 @@ body {
   }
 }
 .row .col-1-of-2 {
-  width: calc((100% - 6rem) / 2);
+  width: calc((100% - 4rem) / 2);
 }
 .row .col-1-of-3 {
-  width: calc((100% - 2 * 6rem) / 3);
+  width: calc((100% - 2 * 4rem) / 3);
 }
 .row .col-2-of-3 {
-  width: calc( (100% - 2 * 6rem) / 3 * 2 + 6rem );
+  width: calc( (100% - 2 * 4rem) / 3 * 2 + 4rem );
 }
 .row .col-1-of-4 {
-  width: calc((100% - 3 * 6rem) / 4);
+  width: calc((100% - 3 * 4rem) / 4);
 }
 .row .col-2-of-4 {
-  width: calc( (100% - 3 * 6rem) / 4 * 2 + 6rem );
+  width: calc( (100% - 3 * 4rem) / 4 * 2 + 4rem );
 }
 .row .col-3-of-4 {
-  width: calc( (100% - 3 * 6rem) / 4 * 3 + 2 * 6rem );
+  width: calc( (100% - 3 * 4rem) / 4 * 3 + 2 * 4rem );
 }
 
 ion-icon {
@@ -143,8 +269,12 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
-  margin-bottom: 6rem;
+  margin: 10rem 2rem 6rem 2rem;
+}
+@media (max-width: 37.5em) {
+  .header {
+    margin: 3rem 1rem 2rem 1rem;
+  }
 }
 .header--name {
   font-size: 4rem;
@@ -168,6 +298,19 @@ ion-icon {
 
 .main {
   background-color: #e1e2ef;
+}
+
+.projects {
+  padding: 2rem;
+  background-color: #efcb68;
+}
+@media (max-width: 75em) {
+  .projects {
+    height: 100%;
+  }
+}
+.projects--header {
+  color: #d64933;
 }
 
 /*# sourceMappingURL=style.css.map */

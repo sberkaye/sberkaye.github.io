@@ -21,8 +21,11 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
-  margin-bottom: 6rem;
+  margin: 10rem 2rem 6rem 2rem;
+
+  @include respond(phone) {
+    margin: 3rem 1rem 2rem 1rem;
+  }
 
   &--name {
     font-size: 4rem;

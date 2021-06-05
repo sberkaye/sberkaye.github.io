@@ -2,7 +2,7 @@
 
 .row {
   max-width: $grid-width;
-  margin: 0 auto;
+  margin: 4rem auto;
 
   @include respond(tab-port) {
     max-width: 50rem;
