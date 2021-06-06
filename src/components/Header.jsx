@@ -16,9 +16,8 @@ const Header = () => (
       </h1>
       <h2 className="header--title">Software Developer</h2>
       <p className="header--description">
-        I'm a software developer who specializes in web development.
-        <br /> I'm passionate about learning new tools to add my programming
-        skills and improve myself by each day.
+        Passionate developer.
+        <br /> Focused on learning new tools and improving by each passing day.
       </p>
     </div>
   </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
+import ReactTooltip from 'react-tooltip';
 
 const projectMatch = {
   'Recipify': 'recipify',
@@ -23,39 +24,44 @@ const Project = ({ data }) => {
     tags.map((tag) => <div className="project--tag">{tag}</div>);
 
   return (
-    <ScrollAnimation
-      offset={250}
-      delay={animationDelays[title]}
-      animateIn="moveInUp"
-    >
-      <div className="project">
-        <div
-          className={`project--header project--header-${projectMatch[title]}`}
-        >
-          <h1 className="project--header--title">{title}</h1>
-        </div>
-        <p className="project--description">{description}</p>
-        <div className="project--header--buttons">
-          <button
-            className="project--header--buttons--button"
-            onClick={() => {
-              window.open(demoLink, '_blank');
-            }}
+    <>
+      <ScrollAnimation
+        offset={250}
+        delay={animationDelays[title]}
+        animateIn="moveInUp"
+      >
+        <div className="project">
+          <div
+            className={`project--header project--header-${projectMatch[title]}`}
           >
-            <ion-icon size="large" name="eye"></ion-icon>
-          </button>
-          <button
-            className="project--header--buttons--button"
-            onClick={() => {
-              window.open(ghLink, '_blank');
-            }}
-          >
-            <ion-icon size="large" name="logo-github"></ion-icon>
-          </button>
+            <h1 className="project--header--title">{title}</h1>
+          </div>
+          <p className="project--description">{description}</p>
+          <div className="project--header--buttons">
+            <button
+              className="project--header--buttons--button"
+              data-tip="View live demo"
+              onClick={() => {
+                window.open(demoLink, '_blank');
+              }}
+            >
+              <ion-icon size="large" name="eye"></ion-icon>
+            </button>
+            <button
+              className="project--header--buttons--button"
+              data-tip="View source code"
+              onClick={() => {
+                window.open(ghLink, '_blank');
+              }}
+            >
+              <ion-icon size="large" name="logo-github"></ion-icon>
+            </button>
+          </div>
+          <div className="project--tags">{renderTags()}</div>
         </div>
-        <div className="project--tags">{renderTags()}</div>
-      </div>
-    </ScrollAnimation>
+      </ScrollAnimation>
+      <ReactTooltip effect="solid" />
+    </>
   );
 };
 

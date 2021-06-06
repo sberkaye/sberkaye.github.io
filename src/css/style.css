@@ -141,7 +141,7 @@ p {
   border-radius: 100%;
   padding: 0.4rem;
   cursor: pointer;
-  transition: background-color 0.4s;
+  transition: all 0.4s;
   box-shadow: 0 2px 6px 1px #5d1d13;
 }
 .project--header--buttons--button ion-icon {
@@ -150,9 +150,14 @@ p {
 }
 .project--header--buttons--button:hover {
   background-color: #da5c48;
+  transform: scale(1.05);
 }
 .project--header--buttons--button:hover ion-icon {
   color: white;
+}
+.project--header--buttons--button:active {
+  box-shadow: 0 2px 2px 1px #33100a;
+  transform: scale(0.97);
 }
 .project--description {
   padding: 2rem;
@@ -326,6 +331,9 @@ ion-icon {
 .contact--text ion-icon {
   color: #190e4f;
   margin: 1rem;
+}
+.contact--text ion-icon:hover {
+  color: #341da6;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,10 @@
     ion-icon {
       color: $dark-blue;
       margin: 1rem;
+
+      &:hover {
+        color: lighten($dark-blue, 20%);
+      }
     }
   }
 }

@@ -94,7 +94,7 @@
         border-radius: 100%;
         padding: 0.4rem;
         cursor: pointer;
-        transition: background-color 0.4s;
+        transition: all 0.4s;
         box-shadow: 0 2px 6px 1px darken($red, 30%);
 
         ion-icon {
@@ -104,10 +104,16 @@
 
         &:hover {
           background-color: lighten($red, 5%);
+          transform: scale(1.05);
         }
 
         &:hover ion-icon {
           color: lighten($light-blue, 50%);
+        }
+
+        &:active {
+          box-shadow: 0 2px 2px 1px darken($red, 40%);
+          transform: scale(0.97);
         }
       }
     }
