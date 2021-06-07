@@ -11,7 +11,12 @@ const Main = () => (
       <a href="#contact" className="button nav-button">
         Contact
       </a>
-      <a href="" className="button cv-button">
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="button cv-button"
+      >
         <ion-icon id="cv-icon" name="download-outline"></ion-icon>
         Resume
       </a>
