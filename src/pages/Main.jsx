@@ -8,16 +8,14 @@ const Main = () => (
       <a href="#projects" className="button nav-button">
         Projects
       </a>
-      <a href="#contact" className="button nav-button">
-        Contact
-      </a>
+
       <a
         href="/resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="button cv-button"
       >
-        <ion-icon id="cv-icon" name="download-outline"></ion-icon>
+        <ion-icon id="cv-icon" name="document"></ion-icon>
         Resume
       </a>
     </div>
