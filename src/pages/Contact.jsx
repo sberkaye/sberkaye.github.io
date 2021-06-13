@@ -3,6 +3,7 @@ import React from 'react';
 const Contact = () => (
   <div id="contact" className="contact">
     <h1 className="contact--header">Contact</h1>
+    <h2>Currently looking for a job as a developer.</h2>
     <p className="contact--text">
       Feel free to contact me via email at{' '}
       <a href="mailto:berkayergin99@gmail.com">berkayergin99@gmail.com</a>
